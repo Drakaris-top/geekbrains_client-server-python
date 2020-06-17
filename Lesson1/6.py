@@ -12,7 +12,7 @@ test_file = open('test_file.txt', 'rb').read()
 print(f"Кодировка файла: {chardet.detect(test_file)['encoding']}\n")
 
 test_file_utf8 = test_file.decode(chardet.detect(test_file)['encoding']).encode('utf-8').decode('utf-8')
-
+breakpoint()
 print("Содиржимое файла:")
 file_data = test_file_utf8.split('\n')
 for line in file_data:
