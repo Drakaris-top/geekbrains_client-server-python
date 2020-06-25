@@ -57,10 +57,11 @@ def client_message(server, port):
         json_data = json.dumps(data) #Перекидываем в json
         soc.send(json_data.encode('utf-8')) #Кодируем
 
-        data = soc.recv(1000000) #Получаем ответ сервака, цифра - буфер
+        data = soc.recv(1000) #Получаем ответ сервака, цифра - буфер
         pp(json.loads(data.decode("utf-8"))) #декодируем ответ сервака
         soc.close() # pfrhsdftv соединение
 
 if __name__ == '__main__':
-    server, port = get_params() #получаем парамтеры сервера и порта
-    client_message(server, port) #отправляем сообщение на сервак
+        client_message('127.0.0.1', 7777)
+    # server, port = get_params() #получаем парамтеры сервера и порта
+    # client_message(server, port) #отправляем сообщение на сервак
